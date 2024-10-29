@@ -2,14 +2,12 @@ server:
   port: 9000
 
 spring:
-  application:
-    name: edge-service
-
   datasource:
     url: jdbc:mariadb://localhost:3306/members
     driver-class-name: org.mariadb.jdbc.Driver
     username: ${MARIADB_USERNAME}
     password: ${MARIADB_PASSWORD}
+
   jpa:
     hibernate:
       ddl-auto: update
