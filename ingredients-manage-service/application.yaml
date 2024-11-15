@@ -13,6 +13,11 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: ${MARIADB_USERNAME}
     password: ${MARIADB_PASSWORD}
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -20,6 +25,14 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
+
+rabbit:
+  queueName: ${QUEUE_NAME}
+  exchangeName: ${EXCHANGE_NAME}
+  routingKey: ${ROUTING_KEY}
+  dlq: ${DLQ_NAME}
+  dlx: ${DLX_NAME}
+  dlqRoutingKey: ${DLQ_ROUTING_KEY}
 
 logging:
   level:
