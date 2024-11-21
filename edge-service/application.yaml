@@ -30,6 +30,16 @@ spring:
               maxBackOff: 500ms
               factor: 2
               basedOnPreviousValue: false
+      mvc:
+        routes:
+          - id: ingredients-manage-route
+            uri: http://localhost:9001
+            predicates:
+              - Path=/ingredients/**
+          - id: refrigerators-route
+            uri: http://localhost:9001
+            predicates:
+              - Path=/refrigerators/**
   #TODO Circuit Breaker, Rate Limiter 관련 설정 추가 (추후 트래픽 테스트하고 추가 예정)
   datasource:
     url: ${MARIADB_URL}
@@ -107,6 +117,5 @@ logging:
       apache:
         coyote:
           http11: debug
-
       hibernate:
         SQL: debug
