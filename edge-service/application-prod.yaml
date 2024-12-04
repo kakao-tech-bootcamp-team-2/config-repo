@@ -2,7 +2,9 @@ server:
   port: ${vault.port}
 
 spring:
-  profiles: prod
+  config:
+    activate:
+      on-profile: prod
 
   datasource:
     url: ${vault.mariadb_url}
