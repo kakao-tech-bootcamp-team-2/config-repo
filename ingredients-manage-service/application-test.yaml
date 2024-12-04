@@ -1,0 +1,25 @@
+spring:
+  profiles: test
+
+  datasource:
+    url: ${vault.mariadb_url}
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${vault.mariadb_username}
+    password: ${vault.mariadb_password}
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+
+logging:
+  level:
+    org:
+      apache:
+        coyote:
+          http11: debug
+      hibernate:
+        SQL: debug

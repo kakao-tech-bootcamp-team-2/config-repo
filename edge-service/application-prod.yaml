@@ -1,0 +1,19 @@
+server:
+  port: ${vault.port}
+
+spring:
+  profiles: prod
+
+  datasource:
+    url: ${vault.mariadb_url}
+    username: ${vault.mariadb_username}
+    password: ${vault.mariadb_password}
+
+logging:
+  level:
+    org:
+      apache:
+        coyote:
+          http11: error
+      hibernate:
+        SQL: error

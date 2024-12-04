@@ -8,11 +8,16 @@ server:
 spring:
   lifecycle:
     timeout-per-shutdown-phase: 15s
+  rabbitmq:
+    host: ${vault.rabbitmq_host}
+    port: ${vault.rabbitmq_port}
+    username: ${vault.rabbitmq_username}
+    password: ${vault.rabbitmq_password}
   datasource:
-    url: ${MARIADB_URL}
+    url: ${vault.mariadb_url}
     driver-class-name: org.mariadb.jdbc.Driver
-    username: ${MARIADB_USERNAME}
-    password: ${MARIADB_PASSWORD}
+    username: ${vault.mariadb_username}
+    password: ${vault.mariadb_password}
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,18 +27,18 @@ spring:
         dialect: org.hibernate.dialect.MariaDBDialect
 
 rabbit:
-  queueName: ${QUEUE_NAME}
-  exchangeName: ${EXCHANGE_NAME}
-  routingKey: ${ROUTING_KEY}
-  dlq: ${DLQ_NAME}
-  dlx: ${DLX_NAME}
-  dlqRoutingKey: ${DLQ_ROUTING_KEY}
+  queueName: ${vault.mail_queue_name}
+  exchangeName: ${vault.mail_exchange_name}
+  routingKey: ${vault.mail_routing_key}
+  dlq: ${vault.mail_dlq}
+  dlx: ${vault.mail_dlx}
+  dlqRoutingKey: ${vault.mail_dlq_routing_key}
 
 logging:
   level:
     org:
       apache:
         coyote:
-          http11: debug
+          http11: info
       hibernate:
         SQL: debug
