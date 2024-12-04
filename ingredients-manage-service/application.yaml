@@ -27,12 +27,12 @@ spring:
         dialect: org.hibernate.dialect.MariaDBDialect
 
 rabbit:
-  queueName: ${vault.mail_queue_name}
-  exchangeName: ${vault.mail_exchange_name}
-  routingKey: ${vault.mail_routing_key}
-  dlq: ${vault.mail_dlq}
-  dlx: ${vault.mail_dlx}
-  dlqRoutingKey: ${vault.mail_dlq_routing_key}
+  queueName: ${vault.recommendation_queue_name}
+  exchangeName: ${vault.recommendation_exchange_name}
+  routingKey: ${vault.recommendation_routing_key}
+  dlq: ${vault.recommendation_dlq}
+  dlx: ${vault.recommendation_dlx}
+  dlqRoutingKey: ${vault.recommendation_dlq_routing_key}
 
 logging:
   level:
