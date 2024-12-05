@@ -4,6 +4,12 @@ spring:
       on-profile: test
 
   datasource:
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 30000
     url: ${vault.mariadb_url}
     driver-class-name: org.mariadb.jdbc.Driver
     username: ${vault.mariadb_username}
