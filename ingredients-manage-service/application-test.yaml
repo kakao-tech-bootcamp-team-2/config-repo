@@ -8,8 +8,7 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 2
       idle-timeout: 30000
-      max-lifetime: 60000
-      connection-timeout: 30000
+      max-lifetime: 28500
     url: ${vault.mariadb_url}
     driver-class-name: org.mariadb.jdbc.Driver
     username: ${vault.mariadb_username}
