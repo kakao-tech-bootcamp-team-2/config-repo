@@ -51,10 +51,16 @@ spring:
               - Path=/reviews/**
   #TODO Circuit Breaker, Rate Limiter 관련 설정 추가 (추후 트래픽 테스트하고 추가 예정)
   datasource:
-    url: ${vault.mariadb_url}
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: ${vault.mariadb_username}
-    password: ${vault.mariadb_password}
+    master:
+      url: ${vault.master_mariadb_url}
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: ${vault.master_mariadb_username}
+      password: ${vault.master_mariadb_password}
+    slave:
+      url: ${vault.slave_mariadb_url}
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: ${vault.slave_mariadb_username}
+      password: ${vault.slave_mariadb_password}
 
   jpa:
     hibernate:
