@@ -9,8 +9,12 @@ spring:
 logging:
   level:
     org:
+      springframework:
+        security:
+          web:
+            FilterChainProxy: debug
       apache:
         coyote:
-          http11: error
+          http11: info
       hibernate:
-        SQL: error
+        SQL: debug
