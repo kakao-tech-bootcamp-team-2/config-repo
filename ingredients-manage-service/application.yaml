@@ -14,10 +14,16 @@ spring:
     username: ${vault.rabbitmq_username}
     password: ${vault.rabbitmq_password}
   datasource:
-    url: ${vault.mariadb_url}
-    driver-class-name: org.mariadb.jdbc.Driver
-    username: ${vault.mariadb_username}
-    password: ${vault.mariadb_password}
+    master:
+      url: ${vault.master_mariadb_url}
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: ${vault.master_mariadb_username}
+      password: ${vault.master_mariadb_password}
+    slave:
+      url: ${vault.slave_mariadb_url}
+      driver-class-name: org.mariadb.jdbc.Driver
+      username: ${vault.slave_mariadb_username}
+      password: ${vault.slave_mariadb_password}
   jpa:
     hibernate:
       ddl-auto: update
