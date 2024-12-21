@@ -31,6 +31,12 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MariaDBDialect
+  data:
+    redis:
+      connect-timeout: 2s
+      host: ${vault.redis_host}
+      port: ${vault.redis_port}
+      timeout: 1s
 
 rabbit:
   queueName: ${vault.recommendation_queue_name}
